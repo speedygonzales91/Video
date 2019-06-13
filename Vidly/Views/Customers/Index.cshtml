@@ -14,7 +14,7 @@
     {
         <tr>
             <td>
-                <p>@cust.Name</p>
+                <p>@Html.ActionLink(@cust.Name.ToString(),"Details/" + cust.Id,"Customers")</p>
             </td>
         </tr>
     }

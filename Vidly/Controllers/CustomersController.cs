@@ -27,13 +27,20 @@ namespace Vidly.Controllers
 
         public ActionResult Details(int id)
         {
-            for (int i = 0; i < randomMovie.Customers.Count; i++)
+            if (id < randomMovie.Customers.Count)
             {
-                if (id == i)
-                {
-
-                }
+                var customer = randomMovie.Customers[id];
+                return View(customer);
             }
+            else
+            {
+                return RedirectToAction("NoCustomerFound");
+            }
+        }
+
+        public ActionResult NoCustomerFound()
+        {
+            return View();
         }
     }
 }
