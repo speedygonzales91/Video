@@ -34,10 +34,10 @@ namespace Vidly.Controllers
             }
             else
             {
-                return RedirectToAction("NoCustomerFound");
+                    return View(randomMovie.Customers[i]);
             }
         }
-
+            return View("NoCustomer");
         public ActionResult NoCustomerFound()
         {
             return View();
